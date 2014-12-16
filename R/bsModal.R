@@ -18,7 +18,7 @@ bsModal <- function(id, title, trigger, ..., href) {
     mo$children[[2]] <- tagAppendChildren(mo$children[[2]], list = list(...))
   }
 
-  return(mo)
+  return(sbsHead(mo))
   
 }
 
@@ -38,7 +38,7 @@ bsModalBoot3 <- function (id, title, trigger, ..., href)
     mo$children[[1]]$children[[1]]$children[[2]] <- tagAppendChildren(mo$children[[1]]$children[[1]]$children[[2]], 
                                                                       list = list(...))
   }
-  return(mo)
+  return(sbsHead(mo))
 }
 
 toggleModal <- function(session, modalId) {
