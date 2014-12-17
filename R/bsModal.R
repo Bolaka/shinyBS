@@ -25,7 +25,7 @@ bsModal <- function(id, title, trigger, ..., href) {
 # Adding a bootstrap 3 modal dialog
 bsModalBoot3 <- function (id, title, trigger, ..., href) 
 {
-  mo <- tags$div(class = "modal sbs-modal fade", id = id, 'data-trigger' = trigger, tabindex="-1", role="dialog", 'aria-labelledby'="myModalLabel", 'aria-hidden'="true",
+  mo <- tags$div(class = "modal sbs-modal hide fade", id = id, 'data-trigger' = trigger, tabindex="-1", role="dialog", 'aria-labelledby'="myModalLabel", 'aria-hidden'="true",
                  tags$div(class = "modal-dialog", tags$div(class = "modal-content", tags$div(class = "modal-header", 
                                                                                              tags$button(type = "button", class = "close", 'data-dismiss' = "modal", 
                                                                                                          HTML("&times;")), tags$h3(class = "modal-title", id="myModalLabel", title)), body <- tags$div(class = "modal-body"), 
