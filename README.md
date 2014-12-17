@@ -11,7 +11,7 @@ install.packages("devtools")
 After installing `devtools` in R you can install shinyBS by typing at the R prompt: 
 
 ```
-install_github("shinyBS", "ebailey78")
+install_github("shinyBS", "Bolaka")
 ```
 
 `shinyBS` was also added to CRAN. You can install the CRAN version with:
