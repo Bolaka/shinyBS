@@ -31,6 +31,9 @@ bsDemo()
 
 #### Version 0.25 (working version)
 
+* **bsModalBoot3**
+  * Create bootstrap 3 modal dialogs if the bootstrap version used by shiny is 3.3.1 (that happens if you are working with the latest development builds)
+
 * **bsNavDropDown**
   * You can now create submenus inside a drop down by making a including lists inside your choices argument list. The submenus are built recursively so theoretically submenus can go as deep as you want
   * You can create headers and dividers in your menus by include `NA`'s in you choices list, a named `NA` will become a header and an unnamed `NA` will become a divider.
