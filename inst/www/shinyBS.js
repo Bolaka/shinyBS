@@ -22,14 +22,32 @@ $.extend(bsModalBinding, {
     $(el).toggleClass("hide", value);
   },
   subscribe: function(el, callback) {
-    $(el).on("shown.bsModalBinding hidden.bsModalBinding", function(e) {
-      callback();
+    // do nothing on modal "cancel"
+    $(el).find(".modal-cancel").on("click", function(e) {
+      console.log("cancel")
+    })
+
+    // send data from modal back to server on modal "submit"
+    $(el).find(".modal-save").on("click", function(e) {
+      var result = {
+        data : $(el).data("data"),
+        modalinfo : $(el).find('.modal-body .form-control').map(function () { return $(this).val(); }).get()
+      }
+      Shiny.onInputChange("modal-hidden", result)
+    })
+
+    // hidden.bs.modal.bsModalBinding - event is not used!
+    $(el).on("shown.bs.modal.bsModalBinding", function(e) {
+      $(el).find(".modal-title").text($(el).data('data')['info'])
     })
   },
   receiveMessage: function(el, data) {
     if(data.hasOwnProperty("toggle")) {
       if(data.toggle) {
         $(el).modal("toggle");
+      }
+      if(data.data) {
+        $(el).data('data', data.data);
       }
     }
   },
