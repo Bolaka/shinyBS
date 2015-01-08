@@ -42,7 +42,7 @@ $.extend(bsModalBinding, {
         $(el).find(".modal-title").text($(el).data('data')['info'])
       else {
         var data = {
-          featureID : "clean-rows-cols"
+          featureID : $(el).attr("id")
         };
         $(el).data('data', data);
       }
