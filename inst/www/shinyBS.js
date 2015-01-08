@@ -38,7 +38,14 @@ $.extend(bsModalBinding, {
 
     // hidden.bs.modal.bsModalBinding - event is not used!
     $(el).on("shown.bs.modal.bsModalBinding", function(e) {
-      $(el).find(".modal-title").text($(el).data('data')['info'])
+      if ($(el).data('data'))
+        $(el).find(".modal-title").text($(el).data('data')['info'])
+      else {
+        var data = {
+          featureID : "clean-rows-cols"
+        };
+        $(el).data('data', data);
+      }
     })
   },
   receiveMessage: function(el, data) {
