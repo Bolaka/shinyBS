@@ -31,7 +31,8 @@ $.extend(bsModalBinding, {
     $(el).find(".modal-save").on("click", function(e) {
       var result = {
         data : $(el).data("data"),
-        modalinfo : $(el).find('.modal-body .form-control').map(function () { return $(this).val(); }).get()
+        modalinfo : $(el).find('.modal-body .shiny-bound-input').map(function () { return $(this).val(); }).get(),
+        random : Math.random()
       }
       Shiny.onInputChange("modal-hidden", result)
     })
